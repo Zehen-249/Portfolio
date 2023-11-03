@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Dancing+Script&family=Days+One&family=Della+Respira&family=Dr+Sugiyama&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+html{
+    width: 100vw;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #252B26;
+   
+}
+
+nav {
+    z-index: 100;
+    background-color: #252B26;
+    height:65px;
+    width: 100%;
+    padding: 0 200px 0 200px;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a{
+    padding: 10px;
+    border-radius: 20px;
+    color: wheat;
+    font-family: "poppins";
+    font-size: 1rem;
+}
+nav a:hover,nav a.active{
+    background-color: white;
+    border-radius: 20px;
+    transition: 0.3s es;
+    color: rgb(19, 185, 108);
+}
+
+.welcome{
+    width: 100%;
+    height: 150px;
+    font-size: 26px;
+    text-align: center;
+    position: relative;
+    top: 110px;
+    font-family: "Cinzel";
+    color: hsl(0, 0%, 100%);
+}
+#home{
+    width: 100%;
+    height: inherit;
+}
+#home .container{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#home .container .grid{
+
+    display: grid;
+    grid-template-areas: 
+    "card card"
+    "card card";
+    gap: 10px;
+    padding: 80px;
+
+}
+
+a .card
+{
+    width: 250px;
+    height:160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D6CC99;
+    display: grid;
+    cursor: pointer;
+    transition: 0.3s
+}
+a .card .icon{
+    position: relative;
+    top: 30%;
+    align-self: center;
+    justify-self: center;
+}
+a .card ,text{
+    text-align: center;
+}
+a .card .icon img{
+    width: 80px;
+}
+a .card .text img{
+    width: 70%;
+    opacity: 0;
+}
+a .card:hover{
+
+    background-color: hsl(0, 0%,110%);
+}
+a .card:hover .icon{
+    top: 25%;
+    transition: 0.3s ease-in-out;
+}
+.grid:hover> a .card{
+    width: 380px;
+    height: 200px;
+    transition: 0.3s ease-in-out;
+}
+a .card:hover .icon img{
+    animation: shrink 0.2s ease-in-out;
+    width: 65px;
+   
+}
+a .card:hover .text img{
+    animation: showUp 0.3s ease-in-out;
+    opacity: 100%;
+
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+}
+
+#about .container{
+    padding: 20px 50px 20px 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+#about .container .left{
+    height: inherit;
+    /* background-color: #fff; */
+
+}
+#about .container .left img{
+    width: 70%;
+    position: relative;
+    left: 100px;
+}
+#about .container .right{
+    width: 80%;
+    text-align: justify;
+    color: white;
+}
+#about .container .right h1{
+    font-family: "Dancing Script";
+    font-size: 3rem;
+    position: relative;
+    top: -25px;
+    left: -25px;
+    
+}
+
+#about .container .right #name{
+    font-family: "Dr Sugiyama";
+    text-decoration: underline;
+    color: #D6CC99;
+    position: relative;
+    left: 50%;
+    transform: translateX(-25%);
+    font-size: 4rem;
+}
+#about .container .right h4{
+    font-family: "Della Respira";
+    position: relative;
+    top: -15px;
+    left: -15px;
+
+}
+#about .container .right p{
+    font-family: "Poppins";
+    position: relative;
+    top: -30px;
+    color: ;
+
+
+}
+#Education{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1.pageTitle{
+    font-family: "Days one";
+    font-size: 4rem;
+    color:#D6CC99;
+    text-align: center;
+}
+#Education .table{
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #D6CC99;
+}
+
+#Education table, tr td{
+
+    padding: 20px 10px 20px 10px;
+    width: 150px;
+    font-family: "Cinzel";
+    font-size: 1.5rem;
+    text-align: center;
+    border-collapse: collapse;
+    color: rgb(7, 80, 68);
+}
+#Education tbody td{
+    border: 0.5px solid gray;
+
+}
+#certifications{
+    height: inherit;
+    padding: 100px 200px;
+
+  
+}
+#certifications .certificate{
+    background-color:#D6CC99;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    border-radius: 20px;
+    height: 170px;
+}
+#certifications .certificate .left{
+    margin-left: 30px;
+    margin-right: 20px;
+    width: 150px;
+    height: 100px;
+
+}
+#certifications .certificate .left img{
+    position: relative;
+    top: -10px;
+    max-width: 140px;
+    max-height: 120px;
+    border-radius: 10px;
+}
+#certifications .certificate .right{
+    margin: 5px 20px 5px 10px;
+    font-family: "poppins";
+}
+#certifications .certificate .right h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(7, 80, 68);
+}
+#certifications .certificate .right p{
+    color: rgb(62, 63, 63);
+    width: 80%;
+}
+
+#contact .container{
+   padding:100px;
+}
+#contact .container table{
+    width: 100%;
+}
+#contact .container table td{
+    text-align: start;
+    width: 50%;
+    color: white;
+    font-family: "Poppins";
+}
+#contact .container table td a{
+    color: white;
+}
+
+
+#feedback{
+    padding: 100px;
+    height: inherit;
+}
+#feedback .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#feedback form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #D6CC99;
+    padding: 50px;
+    width: 80%;
+    height: 80%;
+    border-radius: 30px;
+
+}
+
+#feedback form input,textarea ,button{
+    padding: 10px;
+    font-family:"Poppins";
+    margin: 10px 0;
+    width: 350px;
+    border: 0;
+    border-radius: 5px;
+    color: rgb(7, 80, 68);
+}
+#feedback form button{
+    background-color: rgb(7, 80, 68);
+    color: #D6CC99;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+#hiddenConfirm{
+    display: none;
+}
+
+
+@keyframes showUp {
+    0%{
+        opacity: 0%;
+    }
+    25%{
+        opacity: 25%;
+    }
+    50%{
+        opacity: 50%;
+    }
+    75%{
+        opacity: 75%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes shrink {
+    0%{
+        width: 80px;
+    }
+    25%{
+        width: 75px;
+    }
+    50%{
+        width: 70px;
+    }
+    75%{
+        width: 68px;
+    }
+    100%{
+        width: 65px;
+    }
+}
