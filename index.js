@@ -16,5 +16,12 @@ window.onscroll = () => {
         };
     });
 };
-
 let submitted=false;
+
+const toggleBtn = document.getElementsByClassName('toggle')[0]
+const nav = document.getElementsByTagName('nav')[0]
+
+toggleBtn.addEventListener('click', () =>{
+    nav.classList.toggle('active')
+})
+
