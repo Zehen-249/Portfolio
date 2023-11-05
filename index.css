@@ -45,6 +45,22 @@ nav a:hover,nav a.active{
     transition: 0.3s es;
     color: rgb(19, 185, 108);
 }
+.toggle-btn{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.2rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+.toggle-btn .bar{
+    height: 3px;
+    width: 100%;
+    background-color: #D6CC99;
+    border-radius: 10px;
+}
 
 .welcome{
     width: 100%;
@@ -58,7 +74,6 @@ nav a:hover,nav a.active{
 }
 #home{
     width: 100%;
-    height: inherit;
 }
 #home .container{
     margin-top: 40px;
@@ -72,15 +87,18 @@ nav a:hover,nav a.active{
     grid-template-areas: 
     "card card"
     "card card";
+    grid-auto-flow: column;
     gap: 10px;
     padding: 80px;
 
 }
 
+
 a .card
 {
     width: 250px;
     height:160px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,50 +123,68 @@ a .card .text img{
     width: 70%;
     opacity: 0;
 }
-a .card:hover{
 
-    background-color: hsl(0, 0%,110%);
+@media(hover:hover){
+    a .card:hover{
+
+        background-color: hsl(0, 0%,110%);
+    }
+    a .card:hover .icon{
+        top: 25%;
+        transition: 0.3s ease-in-out;
+    }
+    .grid:hover> a .card{
+        width: 380px;
+        height: 200px;
+        transition: 0.3s ease-in-out;
+    }
+    a .card:hover .icon img{
+        animation: shrink 0.2s ease-in-out;
+        width: 65px;
+    
+    }
+    a .card:hover .text img{
+        animation: showUp 0.3s ease-in-out;
+        opacity: 100%;
+
+    }
 }
-a .card:hover .icon{
-    top: 25%;
-    transition: 0.3s ease-in-out;
-}
-.grid:hover> a .card{
+@media (hover:none){
+    a .card{   
     width: 380px;
-    height: 200px;
-    transition: 0.3s ease-in-out;
-}
-a .card:hover .icon img{
-    animation: shrink 0.2s ease-in-out;
-    width: 65px;
-   
-}
-a .card:hover .text img{
-    animation: showUp 0.3s ease-in-out;
-    opacity: 100%;
+    height:200px;
+    background-color: white;
+    }
+    a .card .icon{
+        top: 25%;
+    }
+    a .card .icon img{
+        width: 65px;
+    }
+    a .card .text img{
+        animation: showUp 0.3s ease-in-out;
+        opacity: 100%;
 
+    }
 }
 
 section{
     width: 100%;
-    height: 100vh;
+    height: auto;
+    margin-bottom: 200px;
 }
 
 #about .container{
+    width: 100%;
     padding: 20px 50px 20px 50px;
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
 
-#about .container .left{
-    height: inherit;
-    /* background-color: #fff; */
-
-}
 #about .container .left img{
     width: 70%;
     position: relative;
-    left: 100px;
+    left: 30px;
 }
 #about .container .right{
     width: 80%;
@@ -169,7 +205,7 @@ section{
     text-decoration: underline;
     color: #D6CC99;
     position: relative;
-    left: 50%;
+    left: 45%;
     transform: translateX(-25%);
     font-size: 4rem;
 }
@@ -183,11 +219,9 @@ section{
 #about .container .right p{
     font-family: "Poppins";
     position: relative;
-    top: -30px;
-    color: ;
-
-
+    top: -20px;
 }
+
 #Education{
     display: flex;
     flex-direction: column;
@@ -221,34 +255,30 @@ h1.pageTitle{
 
 }
 #certifications{
-    height: inherit;
-    padding: 100px 200px;
+    padding: 100px 10%;
 
-  
 }
 #certifications .certificate{
     background-color:#D6CC99;
     padding: 15px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 15px;
+    margin-top: 15px;
     border-radius: 20px;
-    height: 170px;
 }
 #certifications .certificate .left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin-left: 30px;
     margin-right: 20px;
     width: 150px;
     height: 100px;
-
 }
 #certifications .certificate .left img{
-    position: relative;
-    top: -10px;
-    max-width: 140px;
-    max-height: 120px;
     border-radius: 10px;
+    max-width: 100vw;
+    max-height: 100%;
 }
 #certifications .certificate .right{
     margin: 5px 20px 5px 10px;
@@ -258,6 +288,7 @@ h1.pageTitle{
     font-size: 2rem;
     font-weight: 600;
     color: rgb(7, 80, 68);
+    text-align:left;
 }
 #certifications .certificate .right p{
     color: rgb(62, 63, 63);
@@ -265,7 +296,7 @@ h1.pageTitle{
 }
 
 #contact .container{
-   padding:100px;
+   padding:0px 100px;
 }
 #contact .container table{
     width: 100%;
@@ -273,7 +304,6 @@ h1.pageTitle{
 #contact .container table td{
     text-align: start;
     width: 50%;
-    color: white;
     font-family: "Poppins";
 }
 #contact .container table td a{
@@ -282,8 +312,8 @@ h1.pageTitle{
 
 
 #feedback{
-    padding: 100px;
-    height: inherit;
+    padding: 0px 100px;
+    /* height: inherit; */
 }
 #feedback .container{
     display: flex;
@@ -357,5 +387,294 @@ h1.pageTitle{
     }
     100%{
         width: 65px;
+    }
+}
+
+
+@media screen and (max-width:900px){
+    nav {
+        padding: 0 150px 0 150px;
+    }
+    #home .container{
+        margin-top: 0px;
+        
+    }
+    .welcome{
+        top: 100px;
+    }
+    #home .container .grid{
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 80px;
+    
+    }
+    a .card{
+    width: 60vw;
+    height:160px;
+    }
+    #about .container{
+        width: 100%;
+        padding: 0px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    #about .container .left img{
+        width: 70%;
+        position: relative;
+        left: 30px;
+    }
+    h1.pageTitle{
+        font-size: 3rem;
+    }
+    #Education .table{
+        padding: 10px;
+        width: auto;
+    }
+    #Education table, tr td{
+
+        font-size: 1rem;
+    }
+    #feedback{
+        padding: 0px 50px;
+        /* height: inherit; */
+    }
+}
+@media screen and (max-width:600px){
+    nav {
+        display: none;
+        flex-direction: column;
+        height: auto;
+        position: relative;
+        top: 70px;
+    }
+    .toggle-btn{
+        display: flex;
+    }
+    .toggle{
+        height: 65px;
+        width: 100%;
+        position: fixed;
+        background-color: #252B26;
+        z-index: 10;
+    }
+    nav.active{
+        display: flex;
+    }
+
+    .welcome{
+        top: 70px;
+        font-size: .95rem;
+    }
+    #home .container .grid{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0px;
+    
+    }
+    #about .container{
+        width: 100%;
+        padding: 0px;
+        display:block;
+    }
+    #about .container .left img{
+        float: left;
+        width: 20%;
+    }
+    #about .container .right h1{
+        font-family: "Dancing Script";
+        font-size: 1.5rem;
+        position: relative;
+        top: -10px;
+        left: 8%;
+        
+    }
+    #about .container .right h4{
+        font-family: "Della Respira";
+        font-size: 0.5rem;
+        position: relative;
+        top: -5px;
+        left: 11%;
+    
+    }
+
+    #about .container .right #name{
+        font-family: "Dr Sugiyama";
+        text-decoration: underline;
+        color: #D6CC99;
+        position: relative;
+        left: 51%;
+        transform: translateX(-25%);
+        font-size: 2.5rem;
+    }
+    #about .container .right p{
+        font-family: "Poppins";
+        position: relative;
+        left: 12%;
+        top: 10%;
+    }
+    h1.pageTitle{
+        font-size: 3rem;
+    }
+    #Education .table{
+        padding: 10px;
+        width: auto;
+    }
+    #Education table, tr td{
+
+        font-size: 1rem;
+    }
+    #certifications .certificate{
+        padding: 5px;
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+    #certifications .certificate .right h1{
+        font-size: .5rem;
+    }
+    #certifications .certificate .right p{
+        font-size: 8px;
+        color: rgb(62, 63, 63);
+    }
+    #contact .container{
+        padding:0px 20px;
+     }
+    #contact .container table td{
+        text-align: start;
+        color: white;
+        font-family: "Poppins";
+        font-size: .8rem;
+    }
+    #feedback{
+        padding: 0px 20px;
+    }
+}
+@media screen and (max-width:750px){
+    #Education table, tr td{
+
+        font-size: .7rem;
+    }
+    #certifications{
+        padding: 0px 10%;
+    }
+    #certifications .certificate{
+        padding: 7px;
+        margin-top: 15px;
+        border-radius: 15px;
+    }
+    #certifications .certificate .right h1{
+        font-size: 1.2rem;
+    }
+    #certifications .certificate .right p{
+        font-size: 10px;
+        color: rgb(62, 63, 63);
+        width: 95%;
+    }
+    #contact .container table td{
+    text-align: start;
+    width: 50%;
+    color: white;
+    font-family: "Poppins";
+    font-size: 1rem;
+}
+#feedback form input,textarea ,button{
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    }
+}
+@media screen and (max-width:450px){
+    #about .container .right h1{
+        font-family: "Dancing Script";
+        font-size: 1.1rem;
+        position: relative;
+        top: -10px;
+        left: 13%;
+        
+    }
+    #about .container .right h4{
+        font-family: "Della Respira";
+        font-size: 0.4rem;
+        position: relative;
+        top: -5px;
+        left: 15%;
+    
+    }
+    #about .container .right #name{
+        font-family: "Dr Sugiyama";
+        text-decoration: underline;
+        color: #D6CC99;
+        position: relative;
+        left: 51%;
+        transform: translateX(-25%);
+        font-size: 2rem;
+    }
+    #about .container .right p{
+        font-family: "Poppins";
+        position: relative;
+        left: 12%;
+        top: 10%;
+        font-size: .7rem;
+    }
+    #Education .table{
+        padding: 10px;
+        width: auto;
+    }   
+    #Education table, tr td{
+        padding: 5px;
+        font-size: .5rem;
+    }
+    #certifications .certificate .right h1{
+        font-size: 0.85rem;
+    }
+    #certifications .certificate .right p{
+        font-size: 5px;
+        color: rgb(62, 63, 63);
+    }
+    #certifications .certificate .left{
+        margin-left: 0px;
+        margin-right: 10px;
+        width: 120px;
+        height: 100px;
+    }
+    #certifications .certificate .left img{
+        border-radius: 10px;
+        max-width: 100vw;
+        max-height: 80%;
+    }
+    #contact .container{
+        padding:0px 10px;
+    }
+    h1.pageTitle{
+        font-family: "Days one";
+        font-size: 2rem;
+        color:#D6CC99;
+        text-align: center;
+    }
+     #contact .container table td{
+        font-size: 0.6rem;
+    }
+    #feedback{
+        height: auto;
+    }
+    #feedback form{
+        padding: 0px 20px;
+        width: 80%;
+        height: 80%;
+        border-radius: 10px;
+    
+    }
+    #feedback form input,textarea ,button{
+        padding: 8px;
+        width: 100%;
+        font-size: 0.5rem;
+        border-radius: 5px;
+    }
+    #feedback form button{
+        width: 80%;
+        font-size: .8rem;
     }
 }
