@@ -305,6 +305,7 @@ h1.pageTitle{
     text-align: start;
     width: 50%;
     font-family: "Poppins";
+    color:white
 }
 #contact .container table td a{
     color: white;
@@ -329,24 +330,24 @@ h1.pageTitle{
     background-color: #D6CC99;
     padding: 50px;
     width: 80%;
-    height: 80%;
-    border-radius: 30px;
+    border-radius: 20px;
 
 }
 
 #feedback form input,textarea ,button{
-    padding: 10px;
+    padding: 20px;
     font-family:"Poppins";
     margin: 10px 0;
-    width: 350px;
+    width: 80%;
     border: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     color: rgb(7, 80, 68);
+    font-size: 1.2rem;
 }
 #feedback form button{
     background-color: rgb(7, 80, 68);
     color: #D6CC99;
-    font-size: 1.2rem;
+    font-size: 2rem;
     cursor: pointer;
 }
 #hiddenConfirm{
@@ -552,6 +553,13 @@ h1.pageTitle{
     }
 }
 @media screen and (max-width:750px){
+    nav{
+    padding: 0 30px 0 30px;
+
+    }
+    nav a{
+        font-size: 0.8rem;
+    }
     #Education table, tr td{
 
         font-size: .7rem;
